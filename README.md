@@ -13,7 +13,7 @@ sing --folder_path "C:\Users\User\Music\BTS\BTS - BE" --lyrics_url https://geniu
 sing --folder_path "C:\Users\User\Music\Ed Sheeran\Afterglow" --lyrics_url https://genius.com/Ed-sheeran-afterglow-lyrics
 ```
 
-If there are more songs on the album page than you have in your folder, you have to use the **--song_order** flag to specify which tracks and in which order they are. Additional options include:
+If there are more songs on the album page than you have in your folder or if the order of the songs in your folder are not the same as in the album page, you have to use the **--song_order** flag to specify which tracks and in which order they are. Additional options include:
 
 ```console
 --artist        Adds the ARIST name to the mp3 files instead of 
