@@ -1,10 +1,16 @@
 # Lyrify : music-tagger
 __Lyrify__ is a simple CLI program to add lyrics as well as other information from genius.com to your music. For now only .mp3 files are supported.
 
-To add lyrics to an album simply run **sing** with the **--folder_path** and **--lyrics_url** options:
+To add lyrics to an album simply run **sing** with the **--folder_path** and **--lyrics_url** options. This also works with single songs, so if you use a direct link to a song's lyrics.
 
+**Album:**
 ```console
 sing --folder_path "C:\Users\User\Music\BTS\BTS - BE" --lyrics_url https://genius.com/albums/Bts/Be
+```
+
+**Single:**
+```console
+sing --folder_path "C:\Users\User\Music\Ed Sheeran\Afterglow" --lyrics_url https://genius.com/Ed-sheeran-afterglow-lyrics
 ```
 
 If there are more songs on the album page than you have in your folder, you have to use the **--song_order** flag to specify which tracks and in which order they are. Additional options include:
