@@ -1,4 +1,5 @@
 images/
+dist/
 lyrify.egg-info/
 __pycache__/
 

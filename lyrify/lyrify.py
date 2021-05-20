@@ -7,6 +7,8 @@ from lyrify.utils.functions import log_function
 # TODO: Add the ability to post all links and file paths in a txt file
 # the code then executes for each link and file path in the txt file
 
+# TODO: Add .m4a support
+
 class Lyrify:
     def __init__(self, lyrics_url, folder, artist=None, album=None, song_order=None, cover_size=600):
         self.gl = GeniusLyrics(lyrics_url=lyrics_url, artist=artist, album_title=album, folder_path=folder, song_order=song_order, cover_size=cover_size)
