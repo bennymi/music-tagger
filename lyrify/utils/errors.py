@@ -13,3 +13,6 @@ class SongOrderError(ValueError):
 
 class SongOrderValueError(ValueError):
     pass
+
+class WebsiteNotSupportedError(ValueError):
+    pass

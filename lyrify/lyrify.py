@@ -1,6 +1,7 @@
 from lyrify.lyrics.genius import GeniusLyrics
 from lyrify.music.music_tagger import MusicTagger
 from lyrify.utils.arguments import get_arguments
+from lyrify.utils.errors import WebsiteNotSupportedError
 from lyrify.utils.functions import log_function
 
 # TODO: Add the ability to post all links and file paths in a txt file
@@ -22,6 +23,9 @@ class Lyrify:
 
 def lyrify_cli():
     args = get_arguments()
+    
+    if 'genius.com' not in args.lyrics_url:
+        raise WebsiteNotSupportedError(f'This website is not supported: {args.lyrics_url}')
     
     l = Lyrify(args.lyrics_url, args.folder_path, args.artist, args.album_title, args.song_order, args.cover_size)
     l.add_lyrics()
