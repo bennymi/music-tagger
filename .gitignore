@@ -1,0 +1,6 @@
+images/
+lyrify.egg-info/
+__pycache__/
+
+/*.py
+/*.txt
