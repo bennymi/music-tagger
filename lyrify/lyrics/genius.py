@@ -31,8 +31,10 @@ class GeniusLyrics:
         self.track_urls = []
         self.cover_downloaded = False
         
-        self.r = requests.get(lyrics_url).text
-        self.soup = BeautifulSoup(self.r, 'html.parser')
+        # self.r = requests.get(lyrics_url).text
+        # self.soup = BeautifulSoup(self.r, 'html.parser')
+        self.r = requests.get(lyrics_url)
+        self.soup = BeautifulSoup(self.r.content, 'html.parser')
             
     def is_album(self):
         track_list = self.soup.findAll('div', class_='chart_row')
@@ -214,11 +216,13 @@ class GeniusLyrics:
         for track in track_list:
             track_title = re.sub(' Lyrics', '', " ".join(track.h3.text.split()))
             lyrics_url = track.a['href']
-            track_number = int(track.span.span.text.strip())
+            track_number = track.span.span.text.strip()
             
             if track_number == '':
                 # Sometimes there are additional urls that are not a song's lyrics. Skip these.
                 continue
+            else:
+                track_number = int(track_number)
             
             number_of_tracks += 1
             titles.append(track_title)
