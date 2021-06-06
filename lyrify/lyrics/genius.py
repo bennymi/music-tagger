@@ -109,7 +109,10 @@ class GeniusLyrics:
         if len(header) > 0:
             track_re = re.compile('\d+')
             track = track_re.findall(header[0].text)
-            return int(track[0])
+            if len(track) > 1:
+                return int(track[0])
+            else:
+                return 1
         else:
             return 1
         
@@ -205,7 +208,7 @@ class GeniusLyrics:
     def get_album_tracks(self):
         """
         Gets all the songs, along with their track number and the url to their lyrics
-        from an album page. This should be called before the get_all_lyrics() function.
+        from an album page.
         """
         track_list = self.soup.findAll('div', class_='chart_row')
         number_of_tracks = 0
